@@ -1,4 +1,4 @@
-package aula2;
+package aula5.Ex4;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -115,7 +115,8 @@ public class AlunosCliente {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} 
-			}else {
+
+			} else {
 				System.exit(0);
 			}
 		}
