@@ -11,13 +11,14 @@ public class AlunosServidorMultiT {
 	private Connection c;
 	private nAcessos N = new nAcessos();
 	final AtomicInteger clientesAtivos = new AtomicInteger(0);
-	final int maxClientes = 2;
+	final int maxClientes = 5;
 
 	public AlunosServidorMultiT() {
 
 		try {
 			ss = new ServerSocket(2222);
 			while (true) {
+				System.out.println(clientesAtivos.get());
 				s = ss.accept();
 				c = new Connection(s, N, clientesAtivos, maxClientes);
 			}
