@@ -58,4 +58,6 @@ public class HelloServer extends java.rmi.server.UnicastRemoteObject implements 
 			System.out.println("Exception in server - URL");
 		}
 	}
+
+	
 }

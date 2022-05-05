@@ -16,7 +16,9 @@ public class HelloClient extends java.rmi.server.UnicastRemoteObject implements 
 		try {
 			Hello_S_I h = (Hello_S_I) Naming.lookup("Hello");
 			HelloClient c = new HelloClient();
-			h.subscribe("Nome da máquina cliente ...", (Hello_C_I) c);
+			//cliente identifica-se com o timestamp
+			h.subscribe(String.valueOf(System.currentTimeMillis()), (Hello_C_I) c);
+			h.printOnServer("AAFHAOISHFOIAHSF");
 		} catch (Exception r) {
 			System.out.println("Exception in client" + r.getMessage());
 		}
