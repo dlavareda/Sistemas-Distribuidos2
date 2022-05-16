@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Users management</title>
+</head>
+<body>
+	<div>
+		<h1>Department Management System</h1>
+		<hr>
+		<h2>Update Department</h2>
+		<form action="#" th:action="@{/saveDep}" th:object="${depart}"
+			method="POST">
+			<!-- Add hidden form field to handle update -->
+			<input type="hidden" th:field="*{depId}" /> <input type="text"
+				th:field="*{nome}">
+			<button type="submit">Update Dep</button>
+		</form>
+		<hr>
+		<a th:href="@{/}"> Back to User List</a>
+	</div>
+</body>
+</html>

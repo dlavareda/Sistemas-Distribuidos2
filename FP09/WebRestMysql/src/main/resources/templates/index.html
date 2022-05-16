@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Departments management</title>
+</head>
+<body>
+	<div>
+		<h1>Departments List</h1>
+		<a th:href="@{/showNewDepForm}"> Add Dep </a>
+		<table border="1" class="table table-striped table-responsive-md">
+			<thead>
+				<tr>
+					<th>Dep Id</th>
+					<th>Dep Name</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="dep : ${ListDeps}">
+					<td th:text="${dep.depId}"></td>
+					<td th:text="${dep.nome}"></td>
+					<td><a th:href="@{/showUpdateDepForm/{id}(id=${dep.depId})}">Update</a>
+						<a th:href="@{/deleteDep/{id}(id=${dep.depId})}">Delete</a></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+</body>
+</html>

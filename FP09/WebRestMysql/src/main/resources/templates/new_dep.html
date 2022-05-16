@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Departments management</title>
+</head>
+<body>
+	<div>
+		<h1>Department Management System</h1>
+		<hr>
+		<h2>Save Department</h2>
+		<form action="#" th:action="@{/saveDep}" th:object="${newdep}"
+			method="POST">
+
+			<input type="text" th:field="*{depId}" placeholder="Dep id">
+
+			<input type="text" th:field="*{nome}" placeholder="Dep Name">
+			<button type="submit">Save Dep</button>
+		</form>
+		<hr>
+		<a th:href="@{/}"> Back to Department List</a>
+	</div>
+</body>
+</html>
